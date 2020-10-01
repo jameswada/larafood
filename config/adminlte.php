@@ -241,6 +241,11 @@ return [
             'url'  => 'admin/plans',
             'icon'=> 'fas fa-th-list',
         ],
+        [
+            'text' => 'Perfis',
+            'url'  => 'admin/profiles',
+            'icon'=> 'fas fa-address-card',
+        ],
         // [
         //     'text'        => 'pages',
         //     'url'         => 'admin/pages',

@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Planos')
+@section('title', 'Perfis')
 
 @section('content_header')
    <ol class="breadcrumb">
       <li class="breadcrumb-item"> <a href="{{ route('admin.index')}}">Dashboard</a></li>
-      <li class="breadcrumb-item active"> <a href="{{ route('plans.index')}}">Planos</a></li>
+      <li class="breadcrumb-item active"> <a href="{{ route('profiles.index')}}">Perfis</a></li>
    </ol>
 
-   <h1>Planos <a href="{{ route('plans.create')}}" class="btn btn-info">
+   <h1>Perfis <a href="{{ route('profiles.create')}}" class="btn btn-info">
           <i class='fas fa-plus'></i> Adicionar
    </a></h1> 
 
@@ -17,7 +17,7 @@
 @section('content')
     <div class="card">
        <div class="card-header">
-         <form action="{{ route('plans.search')}}" method="POST" class="form form-inline">
+         <form action="{{ route('profiles.search')}}" method="POST" class="form form-inline">
             @csrf
             <input type="text" name="filter" placeholder="Filtro" class="form-control"
                         value="{{ $filters['filter'] ?? ''  }}">
@@ -29,19 +29,16 @@
              <thead class="thead-dark">
                 <tr>
                    <th><small><b>Nome</b></small></th>
-                   <th><small><b>Preço</b></small></th>
                    <th width="300px"><small><b>Ações</b></small></th>
                 </tr>
              </thead>
              <tbody>
-                  @foreach($plans as $plan) 
+                  @foreach($profiles as $profile) 
                      <tr>
-                        <th>{{$plan->name}}</th>
-                        <th>R$ {{ number_format($plan->price,2,',','.')}}</th>
+                        <th>{{$profile->name}}</th>
                         <th style="width:20px;">
-                           <a href="{{ route('details.plans.index', $plan->url)}}" class="btn btn-sm btn-success"> Detalhes</a>
-                           <a href="{{ route('plans.edit', $plan->url)}}" class="btn btn-sm btn-primary"> Editar</a>
-                           <a href="{{ route('plans.show', $plan->url)}}" class="btn btn-sm btn-warning"> Exibir</a>
+                           <a href="{{ route('profiles.edit', $profile->id)}}" class="btn btn-sm btn-primary"> Editar</a>
+                           <a href="{{ route('profiles.show', $profile->id)}}" class="btn btn-sm btn-warning"> Exibir</a>
                         </th>
                      </tr>
                   @endforeach
@@ -50,9 +47,9 @@
        </div>
       <div class="card-footer">     
          @if (isset($filters))
-            {!!$plans->appends($filters)->links() !!}
+            {!!$profiles->appends($filters)->links() !!}
          @else
-            {!!$plans->links() !!}
+            {!!$profiles->links() !!}
          @endif
       </div>
     </div>
