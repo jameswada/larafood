@@ -3,8 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PlanController; 
 use App\Http\Controllers\Admin\DetailPlanController; 
+use App\Http\Controllers\Admin\ACL\ProfileController; 
 
 Route::prefix('admin')->group(function(){
+// profile
+Route::any('profiles/search',[ProfileController::class, 'search'])->name('profiles.search');
+Route::resource('profiles', ProfileController::class);
+
 // detailPlan
 Route::delete('plans/{url}/details/{idDetail}', [DetailPlanController::class, 'destroy'])->name('details.plans.destroy');
 Route::get('plans/{url}/details/{idDetail}', [DetailPlanController::class, 'show'])->name('details.plans.show');
