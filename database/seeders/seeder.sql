@@ -20,3 +20,9 @@ insert detail_plan ( plan_id , name ) values (
 insert detail_plan ( plan_id , name ) values ( 
 	2, 'detalhe 2.2' ) 
 
+-- select * from profiles
+insert profiles (name, description ) values ('master', 'proprietario') 
+insert profiles (name, description ) values ('admin', 'administrador') 
+insert profiles (name, description ) values ('operador', 'operador') 
+insert profiles (name, description ) values ('gerente', 'supervisor' ) 
+
