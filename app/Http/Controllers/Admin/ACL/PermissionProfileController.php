@@ -10,7 +10,7 @@ use App\Models\Permission;
 class PermissionProfileController extends Controller
 {
 
-    protected $repository, $permission;
+    protected $profile, $permission;
 
     public function __construct(Profile $profile, Permission $permission){
         $this->profile = $profile; 
