@@ -1,16 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Planos')
+@section('title', 'Planos do Perfil'  )
 
 @section('content_header')
    <ol class="breadcrumb">
       <li class="breadcrumb-item"> <a href="{{ route('admin.index')}}">Dashboard</a></li>
-      <li class="breadcrumb-item active"> <a href="{{ route('plans.index')}}">Planos</a></li>
+      <li class="breadcrumb-item"> <a href="{{ route('profiles.index')}}">Perfis</a></li>
+      <li class="breadcrumb-item active"> <a href="{{ route('profiles.plans',$profile->id)}}">Planos</a></li>
    </ol>
 
-   <h1>Planos <a href="{{ route('plans.create')}}" class="btn btn-info">
-          <i class='fas fa-plus'></i> Adicionar
-   </a></h1> 
+   <h8>Planos do Perfil <small><strong>{{$profile->name}}</strong></small></h8> 
 
 @stop
 
@@ -29,20 +28,15 @@
              <thead class="thead-dark">
                 <tr>
                    <th><small><b>Nome</b></small></th>
-                   <th><small><b>Preço</b></small></th>
-                   <th width="370px"><small><b>Ações</b></small></th>
+                   <th width="300px"><small><b>Ações</b></small></th>
                 </tr>
              </thead>
              <tbody>
                   @foreach($plans as $plan) 
                      <tr>
                         <th>{{$plan->name}}</th>
-                        <th>R$ {{ number_format($plan->price,2,',','.')}}</th>
                         <th style="width:20px;">
-                           <a href="{{ route('details.plans.index', $plan->url)}}" class="btn btn-sm btn-success"> Detalhes</a>
-                           <a href="{{ route('plans.show', $plan->url)}}" class="btn btn-sm btn-warning"> Exibir</a>
-                           <a href="{{ route('plans.edit', $plan->url)}}" class="btn btn-sm btn-primary"> Editar</a>
-                           <a href="{{ route('plans.profiles', $plan->id)}}" class="btn btn-sm btn-info"> <i class="fas fa-th-list"></i></a>
+                           <a href="{{ route('plans.profile.detach', [$plan->id,$profile->id ])}}" class="btn btn-sm btn-danger"> Desconectar</a>
                         </th>
                      </tr>
                   @endforeach

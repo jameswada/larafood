@@ -29,7 +29,7 @@
              <thead class="thead-dark">
                 <tr>
                    <th><small><b>Nome</b></small></th>
-                   <th width="300px"><small><b>Ações</b></small></th>
+                   <th width="370px"><small><b>Ações</b></small></th>
                 </tr>
              </thead>
              <tbody>
@@ -40,6 +40,7 @@
                            <a href="{{ route('profiles.edit', $profile->id)}}" class="btn btn-sm btn-primary"> Editar</a>
                            <a href="{{ route('profiles.show', $profile->id)}}" class="btn btn-sm btn-warning"> Exibir</a>
                            <a href="{{ route('profiles.permissions', $profile->id)}}" class="btn btn-sm btn-warning"> <i class="fa fa-key"></i> </a>
+                           <a href="{{ route('profiles.plans', $profile->id)}}" class="btn btn-sm btn-info"> <i class="fa fa-list-alt"></i> </a>
                         </th>
                      </tr>
                   @endforeach
