@@ -30,6 +30,7 @@ class DetailPlanController extends Controller
     }
 
     public function create($urlPlan){
+
         if(!$plan=$this->plan->where('url',$urlPlan)->first()){ 
             return redirect()->back(); } 
         return view('admin.pages.plans.details.create', ['plan'=>$plan,]);
