@@ -26,3 +26,5 @@ insert profiles (name, description ) values ('admin', 'administrador')
 insert profiles (name, description ) values ('operador', 'operador') 
 insert profiles (name, description ) values ('gerente', 'supervisor' ) 
 
+-- select * from permission_profile
+

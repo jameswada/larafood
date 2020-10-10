@@ -6,9 +6,11 @@ use App\Http\Controllers\Admin\DetailPlanController;
 use App\Http\Controllers\Admin\ACL\ProfileController; 
 use App\Http\Controllers\Admin\ACL\PermissionController; 
 use App\Http\Controllers\Admin\ACL\PermissionProfileController; 
-use App\Http\Controllers\Admin\ACL\PlanProfileController; 
+use App\Http\Controllers\Admin\ACL\PlanProfileController;
+use App\Http\Controllers\Site\SiteController;
+use Illuminate\Support\Facades\Auth;
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->middleware('auth')->group(function(){
 
 // plan x profile
 Route::get('plan/{id}/profile/{idProfile}/detach', [PlanProfileController::class, 'detachProfilesPlan'])->name('plans.profile.detach');
@@ -32,12 +34,12 @@ Route::resource('permissions', PermissionController::class);
 Route::any('profiles/search',[ProfileController::class, 'search'])->name('profiles.search');
 Route::resource('profiles', ProfileController::class);
 // detailPlan
+Route::get('plans/{url}/details/create', [DetailPlanController::class, 'create'])->name('details.plans.create');
 Route::delete('plans/{url}/details/{idDetail}', [DetailPlanController::class, 'destroy'])->name('details.plans.destroy');
 Route::get('plans/{url}/details/{idDetail}', [DetailPlanController::class, 'show'])->name('details.plans.show');
 Route::put('plans/{url}/details/{idDetail}', [DetailPlanController::class, 'update'])->name('details.plans.update');
 Route::get('plans/{url}/details/{idDetail}/edit', [DetailPlanController::class, 'edit'])->name('details.plans.edit');
 Route::post('plans/{url}/details', [DetailPlanController::class, 'store'])->name('details.plans.store');
-Route::get('plans/{url}/details/create', [DetailPlanController::class, 'create'])->name('details.plans.create');
 Route::get('plans/{url}/details', [DetailPlanController::class, 'index'])->name('details.plans.index');
 
 // plan
@@ -53,7 +55,13 @@ Route::get('plans/{url}/details', [DetailPlanController::class, 'index'])->name(
 });
 
 
+// auth routes -- necessita laravel/ui package 
+// Auth::routes(['register'=>false]);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Route::get('/', function () {    return view('welcome');});
+Route::get('/', [SiteController::class,'index'])->name('site.home');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return Inertia\Inertia::render('Dashboard');
+})->name('dashboard');
