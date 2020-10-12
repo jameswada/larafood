@@ -1,0 +1,28 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Plan;
+use App\Models\Tenant;
+use Illuminate\Database\Seeder;
+
+class TenantsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $plan =  Plan::first();
+
+        $plan->tenants()->create([
+            'cnpj'=>'34084711000103',
+            'name'=>'Larafood',
+            'url'=>'LaraFOOD',
+            'email'=>'jameswada@uol.com.br',
+        ]);
+    }
+    
+}

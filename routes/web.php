@@ -57,9 +57,10 @@ Route::get('plans/{url}/details', [DetailPlanController::class, 'index'])->name(
 
 // auth routes -- necessita laravel/ui package 
 // Auth::routes(['register'=>false]);
-
-
 // Route::get('/', function () {    return view('welcome');});
+
+//site
+Route::get('/plan/{url}', [SiteController::class,'plan'])->name('plan.subscription');
 Route::get('/', [SiteController::class,'index'])->name('site.home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

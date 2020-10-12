@@ -31,7 +31,7 @@
                   @foreach($details as $detail) 
                      <tr>
                         <th>{{$detail->name}}</th>
-                        <th style="width = 20px;">
+                        <th style="width:20px;">
                            <a href="{{ route('details.plans.edit', [$plan->url, $detail->id])}}" class="btn btn-sm btn-primary"> Editar</a>
                            <a href="{{ route('details.plans.show', [$plan->url, $detail->id])}}" class="btn btn-sm btn-warning"> Exibir</a>
                         </th>
