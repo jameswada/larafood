@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -59,4 +60,20 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    // local scope
+        public function scopeTenantUsers(Builder $query){
+            return $query->where('tenant_id', auth()->user()->tenant_id);
+        }
+
+    // global scope
+    // protected static function booted()
+    // {
+    //     static::addGlobalScope('tenant', function (Builder $builder) {
+    //         $builder->where('tenant_id', auth()->user()->tenant_id);
+    //     });
+    // }
+
+    public function tenant(){
+        return $this->belongsTo(Tenant::class);
+    }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PlanController; 
 use App\Http\Controllers\Admin\DetailPlanController; 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ACL\ProfileController; 
 use App\Http\Controllers\Admin\ACL\PermissionController; 
 use App\Http\Controllers\Admin\ACL\PermissionProfileController; 
@@ -11,6 +12,11 @@ use App\Http\Controllers\Site\SiteController;
 use Illuminate\Support\Facades\Auth;
 
 Route::prefix('admin')->middleware('auth')->group(function(){
+
+// users
+Route::any('users/search',[UserController::class, 'search'])->name('users.search');
+Route::resource('users', UserController::class);
+
 
 // plan x profile
 Route::get('plan/{id}/profile/{idProfile}/detach', [PlanProfileController::class, 'detachProfilesPlan'])->name('plans.profile.detach');
@@ -30,7 +36,7 @@ Route::get('permissions/{id}/profile', [PermissionProfileController::class, 'pro
 // permissions
 Route::any('permissions/search',[PermissionController::class, 'search'])->name('permissions.search');
 Route::resource('permissions', PermissionController::class);
-// profile
+// profiles
 Route::any('profiles/search',[ProfileController::class, 'search'])->name('profiles.search');
 Route::resource('profiles', ProfileController::class);
 // detailPlan
