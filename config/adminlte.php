@@ -245,10 +245,16 @@ return [
             'text' => 'Perfis',
             'url'  => 'admin/profiles',
             'icon'=> 'fas fa-address-card',
-        ],        [
+        ],        
+        [
             'text' => 'Permissões',
             'url'  => 'admin/permissions',
             'icon'=> 'fas fa-key',
+        ],
+        [
+            'text' => 'Usuarios',
+            'url'  => 'admin/users',
+            'icon'=> 'fas fa-users',
         ],
         // [
         //     'text'        => 'pages',

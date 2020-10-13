@@ -32,7 +32,7 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
-            'password' => $this->passwordRules(),
+            'password' => ['required','string', 'min:3','max:8'],
             'cnpj'=>['required','numeric', 'min:14','max:14','unique:tenants'],
             'empresa'=>['required', 'string', 'min:3','unique:tenants,name'],
         ])->validate();
