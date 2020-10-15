@@ -9,10 +9,15 @@ use App\Http\Controllers\Admin\ACL\ProfileController;
 use App\Http\Controllers\Admin\ACL\PermissionController; 
 use App\Http\Controllers\Admin\ACL\PermissionProfileController; 
 use App\Http\Controllers\Admin\ACL\PlanProfileController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Site\SiteController;
 use Illuminate\Support\Facades\Auth;
 
 Route::prefix('admin')->middleware('auth')->group(function(){
+
+// products
+Route::any('products/search',[ProductController::class, 'search'])->name('products.search');
+Route::resource('products', ProductController::class);
 
 // categories
 Route::any('categories/search',[CategoryController::class, 'search'])->name('categories.search');

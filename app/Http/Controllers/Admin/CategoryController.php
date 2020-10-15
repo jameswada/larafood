@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateCategory;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -87,7 +88,6 @@ class CategoryController extends Controller
     {   
         if(!$category=$this->repository->find($id))
             return redirect()->back();
-
         $category->update($request->all());
         return redirect()->route('categories.index');
     }
@@ -101,7 +101,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
    
-        if(!$category=$this->repository->find('id', $id))
+        if(!$category=$this->repository->find($id))
             return redirect()->back();
         $category->delete();
         return redirect()->route('categories.index');

@@ -33,7 +33,7 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => ['required','string', 'min:3','max:8'],
-            'cnpj'=>['required','numeric', 'min:14','max:14','unique:tenants'],
+            'cnpj'=>['required','numeric', 'min:14','unique:tenants'],
             'empresa'=>['required', 'string', 'min:3','unique:tenants,name'],
         ])->validate();
         
