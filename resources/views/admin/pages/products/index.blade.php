@@ -41,6 +41,7 @@
                         <th style="width:20px;">
                            <a href="{{ route('products.show', $product->id)}}" class="btn btn-sm btn-warning"> Exibir</a>
                            <a href="{{ route('products.edit', $product->id)}}" class="btn btn-sm btn-primary"> Editar</a>
+                           <a href="{{ route('products.categories', $product->id)}}" class="btn btn-sm btn-primary"> Categorias</a>
                         </th>
                      </tr>
                   @endforeach

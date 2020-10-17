@@ -15,8 +15,7 @@
             @csrf 
             @method('PUT')
             @include('admin.pages.products._partials.form')
-
-           
+        
 
          </form>
       </div>

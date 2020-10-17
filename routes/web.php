@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\CategoryProductController;
 use App\Http\Controllers\Admin\PlanController; 
 use App\Http\Controllers\Admin\CategoryController; 
 use App\Http\Controllers\Admin\DetailPlanController; 
@@ -11,9 +13,15 @@ use App\Http\Controllers\Admin\ACL\PermissionProfileController;
 use App\Http\Controllers\Admin\ACL\PlanProfileController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Site\SiteController;
-use Illuminate\Support\Facades\Auth;
 
 Route::prefix('admin')->middleware('auth')->group(function(){
+
+// product x category
+Route::get('products/{id}/category/{idCategory}/detach', [CategoryProductController::class, 'detachCategoryProduct'])->name('products.categories.detach');
+Route::post('products/{id}/category', [CategoryProductController::class, 'attachCategoryProduct'])->name('products.categories.attach');
+Route::any('products/{id}/categories/create', [CategoryProductController::class, 'categoriesAvailable'])->name('products.categories.available');
+Route::get('products/{id}/categories', [CategoryProductController::class, 'categories'])->name('products.categories');
+Route::get('category/{id}/products', [CategoryProductController::class, 'products'])->name('category.products');
 
 // products
 Route::any('products/search',[ProductController::class, 'search'])->name('products.search');
@@ -29,10 +37,10 @@ Route::resource('users', UserController::class);
 
 
 // plan x profile
-Route::get('plan/{id}/profile/{idProfile}/detach', [PlanProfileController::class, 'detachProfilesPlan'])->name('plans.profile.detach');
-Route::post('plan/{id}/profiles', [PlanProfileController::class, 'attachProfilesPlan'])->name('plans.profiles.attach');
-Route::any('plan/{id}/profiles/create', [PlanProfileController::class, 'profilesAvailable'])->name('plans.profiles.available');
-Route::get('plan/{id}/profiles', [PlanProfileController::class, 'profiles'])->name('plans.profiles');
+Route::get('plans/{id}/profile/{idProfile}/detach', [PlanProfileController::class, 'detachProfilesPlan'])->name('plans.profile.detach');
+Route::post('plans/{id}/profiles', [PlanProfileController::class, 'attachProfilesPlan'])->name('plans.profiles.attach');
+Route::any('plans/{id}/profiles/create', [PlanProfileController::class, 'profilesAvailable'])->name('plans.profiles.available');
+Route::get('plans/{id}/profiles', [PlanProfileController::class, 'profiles'])->name('plans.profiles');
 Route::get('profile/{id}/plans', [PlanProfileController::class, 'plans'])->name('profiles.plans');
 
 
