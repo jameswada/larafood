@@ -12,9 +12,15 @@ use App\Http\Controllers\Admin\ACL\PermissionController;
 use App\Http\Controllers\Admin\ACL\PermissionProfileController; 
 use App\Http\Controllers\Admin\ACL\PlanProfileController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Site\SiteController;
 
 Route::prefix('admin')->middleware('auth')->group(function(){
+
+// tables
+Route::any('tables/search',[TableController::class, 'search'])->name('tables.search');
+Route::resource('tables', TableController::class);
+
 
 // product x category
 Route::get('products/{id}/category/{idCategory}/detach', [CategoryProductController::class, 'detachCategoryProduct'])->name('products.categories.detach');
