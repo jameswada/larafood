@@ -266,6 +266,10 @@ return [
             'text' => 'Produtos',
             'url'  => 'admin/products',
             'icon'=> 'fas fa-boxes',
+        ],        [
+            'text' => 'Mesas',
+            'url'  => 'admin/tables',
+            'icon'=> 'fas fa-tablet',
         ],
         // [
         //     'text'        => 'pages',
