@@ -16,6 +16,8 @@ class PlanController extends Controller
     {
         $this->repository=$plan;
         
+        $this->middleware(['can:Planos']); 
+        
     }
     public function index(){
         $plans = $this->repository->paginate(5); 

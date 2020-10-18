@@ -27,7 +27,7 @@
           <table class="table table-striped table-hover">
              <thead class="thead-dark">
                 <tr>
-                   <th><small><b>Nome</b></small></th>
+                   <th><small><b>Planos</b></small></th>
                    <th width="300px"><small><b>Ações</b></small></th>
                 </tr>
              </thead>

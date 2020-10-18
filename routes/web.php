@@ -15,7 +15,15 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Site\SiteController;
 
+
+// use App\Models\User;
+
 Route::prefix('admin')->middleware('auth')->group(function(){
+
+//debug 
+Route::get('teste', function(){ dd(auth()->user()->permissions()); });
+//debug 
+// Route::get('teste', function(){ dd(auth()->user()->hasPermission('Planos')); });
 
 // tables
 Route::any('tables/search',[TableController::class, 'search'])->name('tables.search');

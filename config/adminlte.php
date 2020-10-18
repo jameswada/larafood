@@ -240,36 +240,43 @@ return [
             'text' => 'Planos',
             'url'  => 'admin/plans',
             'icon'=> 'fas fa-th-list',
+            'can' => 'Planos',
         ],
         [
             'text' => 'Perfis',
             'url'  => 'admin/profiles',
             'icon'=> 'fas fa-address-card',
+            'can' => 'Perfis',
         ],        
         [
             'text' => 'Permissões',
             'url'  => 'admin/permissions',
             'icon'=> 'fas fa-key',
+            'can'=> 'Permissões'
         ],
         [
             'text' => 'Usuarios',
             'url'  => 'admin/users',
             'icon'=> 'fas fa-users',
+            'can'=> 'Usuarios'
         ],
 
         [
             'text' => 'Categorias',
             'url'  => 'admin/categories',
-            'icon'=> 'fas fa-layer-group',
+            'icon'=> 'fas fa-layer-group',            
+            'can'=>'Categorias'
         ],        
         [
             'text' => 'Produtos',
             'url'  => 'admin/products',
             'icon'=> 'fas fa-boxes',
+            'can'=>'Produtos'
         ],        [
             'text' => 'Mesas',
             'url'  => 'admin/tables',
             'icon'=> 'fas fa-tablet',
+            'can'=>'Mesas'
         ],
         // [
         //     'text'        => 'pages',
