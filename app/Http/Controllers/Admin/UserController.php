@@ -17,6 +17,8 @@ class UserController extends Controller
     {
         $this->repository=$user;
         
+       // $this->middleware(['can:Usuarios']); 
+        
     }
     public function index(){
         $users = $this->repository->tenantUsers()->paginate(5); 

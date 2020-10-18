@@ -5,7 +5,7 @@
 @section('content_header')
    <ol class="breadcrumb">
       <li class="breadcrumb-item"> <a href="{{ route('admin.index')}}">Dashboard</a></li>
-      <li class="breadcrumb-item"> <a href="{{ route('plans.index')}}">Perfis</a></li>
+      <li class="breadcrumb-item"> <a href="{{ route('plans.index')}}">Plano</a></li>
       <li class="breadcrumb-item active"> <a href="{{ route('plans.profiles',$plan->id, $profiles)}}">Perfis</a></li>
    </ol>
 

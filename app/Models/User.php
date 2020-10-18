@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\UserACLTrait; 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -17,6 +18,7 @@ class User extends Authenticatable
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
+    use UserACLTrait;
     use TwoFactorAuthenticatable;
 
     /**
