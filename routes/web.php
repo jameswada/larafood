@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ACL\PermissionProfileController;
 use App\Http\Controllers\Admin\ACL\PlanProfileController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\Admin\TenantController;
 use App\Http\Controllers\Site\SiteController;
 
 
@@ -24,6 +25,11 @@ Route::prefix('admin')->middleware('auth')->group(function(){
 Route::get('teste', function(){ dd(auth()->user()->permissions()); });
 //debug 
 // Route::get('teste', function(){ dd(auth()->user()->hasPermission('Planos')); });
+
+
+// tenants
+Route::any('tenants/search',[TenantController::class, 'search'])->name('tenants.search');
+Route::resource('tenants', TenantController::class);
 
 // tables
 Route::any('tables/search',[TableController::class, 'search'])->name('tables.search');
