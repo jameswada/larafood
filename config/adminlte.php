@@ -243,6 +243,12 @@ return [
             'can' => 'Planos',
         ],
         [
+            'text' => 'Empresas',
+            'url'  => 'admin/tenants',
+            'icon'=> 'fas fa-building',
+            'can' => 'tenants',
+        ],
+        [
             'text' => 'Perfis',
             'url'  => 'admin/profiles',
             'icon'=> 'fas fa-address-card',
