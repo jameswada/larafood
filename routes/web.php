@@ -9,8 +9,11 @@ use App\Http\Controllers\Admin\DetailPlanController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ACL\ProfileController; 
 use App\Http\Controllers\Admin\ACL\PermissionController; 
-use App\Http\Controllers\Admin\ACL\PermissionProfileController; 
+use App\Http\Controllers\Admin\ACL\PermissionProfileController;
+use App\Http\Controllers\Admin\ACL\PermissionRoleController;
 use App\Http\Controllers\Admin\ACL\PlanProfileController;
+use App\Http\Controllers\Admin\ACL\RoleController;
+use App\Http\Controllers\Admin\ACL\RoleUserController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\TenantController;
@@ -26,6 +29,24 @@ Route::get('teste', function(){ dd(auth()->user()->permissions()); });
 //debug 
 // Route::get('teste', function(){ dd(auth()->user()->hasPermission('Planos')); });
 
+
+// roles x users
+Route::get('users/{id}/role/{idRole}/detach', [RoleUserController::class, 'detachRolesUser'])->name('users.role.detach');
+Route::post('users/{id}/roles', [RoleUserController::class, 'attachRolesUser'])->name('users.roles.attach');
+Route::any('users/{id}/roles/create', [RoleUserController::class, 'rolesUserAvailable'])->name('users.roles.available');
+Route::get('users/{id}/roles', [RoleUserController::class, 'roles'])->name('users.roles');
+Route::get('role/{id}/users', [RoleUserController::class, 'users'])->name('roles.users');
+
+// permissions x roles
+Route::get('roles/{id}/permissions/{idPermission}/detach', [PermissionRoleController::class, 'detachPermissionsRole'])->name('roles.permissions.detach');
+Route::post('roles/{id}/permissions', [PermissionRoleController::class, 'attachPermissionsRole'])->name('roles.permissions.attach');
+Route::any('roles/{id}/permissions/create', [PermissionRoleController::class, 'permissionsAvailable'])->name('roles.permissions.available');
+Route::get('roles/{id}/permissions', [PermissionRoleController::class, 'permissions'])->name('roles.permissions');
+Route::get('permissions/{id}/role', [PermissionRoleController::class, 'roles'])->name('permissions.roles');
+
+// roles
+Route::any('roles/search',[RoleController::class, 'search'])->name('roles.search');
+Route::resource('roles', RoleController::class);
 
 // tenants
 Route::any('tenants/search',[TenantController::class, 'search'])->name('tenants.search');

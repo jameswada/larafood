@@ -1,23 +1,23 @@
 @extends('adminlte::page')
 
-@section('title', 'Usuarios')
+@section('title', 'Permissões do Cargo'  )
 
 @section('content_header')
    <ol class="breadcrumb">
       <li class="breadcrumb-item"> <a href="{{ route('admin.index')}}">Dashboard</a></li>
-      <li class="breadcrumb-item active"> <a href="{{ route('users.index')}}">Usuarios</a></li>
+      <li class="breadcrumb-item active"> <a href="{{ route('roles.index')}}">Permissões do Cargo</a></li>
    </ol>
 
-   <h1>Usuarios <a href="{{ route('users.create')}}" class="btn btn-info">
+   <h8>Permissões do Cargo <small><strong>{{$role->name}}</strong></small></h8> 
+   <a href="{{ route('roles.permissions.available',$role->id )}}" class="btn btn-info">
           <i class='fas fa-plus'></i> Adicionar
-   </a></h1> 
-
+   </a>
 @stop
 
 @section('content')
     <div class="card">
        <div class="card-header">
-         <form action="{{ route('users.search')}}" method="POST" class="form form-inline">
+         <form action="{{ route('roles.permissions', [$role->id] )}}" method="POST" class="form form-inline">
             @csrf
             <input type="text" name="filter" placeholder="Filtro" class="form-control"
                         value="{{ $filters['filter'] ?? ''  }}">
@@ -29,20 +29,15 @@
              <thead class="thead-dark">
                 <tr>
                    <th><small><b>Nome</b></small></th>
-                   <th><small><b>E-mail</b></small></th>
-                   <th width="370px"><small><b>Ações</b></small></th>
+                   <th width="300px"><small><b>Ações</b></small></th>
                 </tr>
              </thead>
              <tbody>
-                  @foreach($users as $user) 
+                  @foreach($permissions as $permission) 
                      <tr>
-                        <th>{{$user->name}}</th>
-                        <th>{{$user->email}}</th>
+                        <th>{{$permission->name}}</th>
                         <th style="width:20px;">
-                           <a href="{{ route('users.show', $user->id)}}" class="btn btn-sm btn-warning"> Exibir</a>
-                           <a href="{{ route('users.edit', $user->id)}}" class="btn btn-sm btn-primary"> Editar</a>
-                           <a href="{{ route('users.roles', $user->id)}}" class="btn btn-sm btn-primary"> 
-                              <i class="fa fa-address-card"> Cargos</i></a>
+                           <a href="{{ route('roles.permissions.detach', [$role->id,$permission->id ])}}" class="btn btn-sm btn-danger"> Desconectar</a>
                         </th>
                      </tr>
                   @endforeach
@@ -51,9 +46,9 @@
        </div>
       <div class="card-footer">     
          @if (isset($filters))
-            {!!$users->appends($filters)->links() !!}
+            {!!$permissions->appends($filters)->links() !!}
          @else
-            {!!$users->links() !!}
+            {!!$permissions->links() !!}
          @endif
       </div>
     </div>
