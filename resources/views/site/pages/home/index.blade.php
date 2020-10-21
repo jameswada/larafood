@@ -1,9 +1,11 @@
 @extends('site.layouts.app')
 
 @section('content')
+<div class="text-right">
+   <a href="{{ route('login') }}" class="text-lg text-gray-700 underline">Login</a>
+</div>
 <div class="text-center">
-   <h1 class="title-plan">Escolha o plano</h1>
-   
+   <h1 class="title-plan">Escolha o plano</h1>   
 </div>
 <div class="row">
    @foreach($plans as $plan)
