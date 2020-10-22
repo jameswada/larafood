@@ -21,7 +21,7 @@ class TenantService{
          'cnpj'=>$data['cnpj'],
          'name'=>$data['name'],
          'email'=>$data['email'],
-         'url'=>$data('name'),
+         'url'=>$data['name'],
          'subscription'=>now(),
          'expires_at'=>now()->addDays(7),       
 

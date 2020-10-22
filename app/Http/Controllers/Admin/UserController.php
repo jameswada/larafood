@@ -21,7 +21,9 @@ class UserController extends Controller
         
     }
     public function index(){
-        $users = $this->repository->tenantUsers()->paginate(5); 
+
+        // $users = $this->repository->tenantUsers()->paginate(5); 
+        $users = $this->repository->paginate(5); 
         return view('admin.pages.users.index', 
             ['users'=>$users]);
     }

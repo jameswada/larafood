@@ -3,6 +3,7 @@
 @section('content')
 <div class="text-right">
    <a href="{{ route('login') }}" class="text-lg text-gray-700 underline">Login</a>
+   <a href="{{ route('logout') }}" class="text-lg text-gray-700 underline">Logout</a>
 </div>
 <div class="text-center">
    <h1 class="title-plan">Escolha o plano</h1>   
