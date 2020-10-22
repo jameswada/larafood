@@ -246,7 +246,7 @@ return [
             'text' => 'Empresas',
             'url'  => 'admin/tenants',
             'icon'=> 'fas fa-building',
-            'can' => 'tenants',
+            'can' => 'Empresas',
         ],
         [
             'text' => 'Perfis',
