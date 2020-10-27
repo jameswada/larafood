@@ -2,18 +2,30 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\{
+   CategoryAPIController,   
+   ProductAPIController,
+   TableAPIController,   
+   TenantAPIController,
+};
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::group([
+   'prefix'=>'v1',
+   'namespace'=>'Api'
+],function (){
+   Route::get('/tenants/{uuid}',[TenantAPIController::class, 'show']); 
+   Route::get('/tenants',[TenantAPIController::class, 'index']); 
+
+   Route::get('/categories/{url}',[CategoryAPIController::class, 'show']);
+   Route::get('/categories',[CategoryAPIController::class, 'categoriesByTenant']);
+
+   Route::get('/tables/{identity}',[TableAPIController::class, 'show']);
+   Route::get('/tables',[TableAPIController::class, 'tablesByTenant']);
+
+   Route::get('/products',[ProductAPIController::class, 'ProductsByTenant']);
+   Route::get('/products/{flag}',[ProductAPIController::class, 'show']);
 });

@@ -1,0 +1,107 @@
+[33mcommit 5674a6fe02104d02db72001edbda381ed2e65d47[m[33m ([m[1;36mHEAD -> [m[1;32mapiLaravel[m[33m, [m[1;31mlarafood_R/ACLauthorization[m[33m, [m[1;32mACLauthorization[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Thu Oct 22 00:10:27 2020 -0300
+
+    ACLauthorization
+
+[33mcommit 1b69ed7f1dda5dfe5eab352ea59b2fa90b5fb1a9[m[33m ([m[1;31mlarafood_R/permissionsxroles-rolesxusers[m[33m, [m[1;32mpermissionsxroles-rolesxusers[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Tue Oct 20 23:13:46 2020 -0300
+
+    permissionsxroles-rolesxusers
+
+[33mcommit 00a3d9381ab00509b75fbaee2c461612600cc34e[m[33m ([m[1;31mlarafood_R/crud-tenants[m[33m, [m[1;32mcrud-tenants[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Tue Oct 20 00:28:52 2020 -0300
+
+    crud-tenants
+
+[33mcommit ab591f3f01ec4efa3304a0346292fc3a96d21491[m[33m ([m[1;31mlarafood_R/acl[m[33m, [m[1;32macl[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Sun Oct 18 01:51:03 2020 -0300
+
+    acl
+
+[33mcommit a31e8428cab6b780832a3c56e1ffdd5cead7994c[m[33m ([m[1;31mlarafood_R/mesas[m[33m, [m[1;32mmesas[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Fri Oct 16 23:01:19 2020 -0300
+
+    mesas
+
+[33mcommit 05b14e174fa5ddbc5653e1b544fb39d5d6283379[m[33m ([m[1;31mlarafood_R/categoriasxprodutos[m[33m, [m[1;32mcategoriasxprodutos[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Fri Oct 16 22:07:19 2020 -0300
+
+    categoriasxprodutos
+
+[33mcommit 140e4a0327c464c7a2db4e82ac478791fed8d223[m[33m ([m[1;31mlarafood_R/produtos[m[33m, [m[1;32mprodutos[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Wed Oct 14 22:33:35 2020 -0300
+
+    produtos
+
+[33mcommit e51afcd486ef7580644ddaced947952acaa3461a[m[33m ([m[1;31mlarafood_R/categorias[m[33m, [m[1;32mcategorias[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Wed Oct 14 00:24:43 2020 -0300
+
+    categorias
+
+[33mcommit 074e7b0dea53d92ec02e8300d418b2ce066afeae[m[33m ([m[1;31mlarafood_R/gestaoUsuarios[m[33m, [m[1;32mgestaoUsuarios[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Mon Oct 12 23:04:57 2020 -0300
+
+    gestaoUsuarios
+
+[33mcommit 856150b6ec2b89a877cdecbaa930a7fc15c32b28[m[33m ([m[1;31mlarafood_R/cadastroTenant[m[33m, [m[1;32mcadastroTenant[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Mon Oct 12 00:03:36 2020 -0300
+
+    casastroTenant
+
+[33mcommit 4d8dab972310a44a23c69fd0d122e5afb46b631f[m[33m ([m[1;31mlarafood_R/SIteeAutenticacao[m[33m, [m[1;32mSIteeAutenticacao[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Sat Oct 10 00:14:47 2020 -0300
+
+    SiteeAutenticação + correcao Planosxperfis
+
+[33mcommit 2cf8c13208e9aef040d37209ab53af4093639dba[m[33m ([m[1;31mlarafood_R/planosxperfis[m[33m, [m[1;32mplanosxperfis[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Thu Oct 8 16:50:03 2020 -0300
+
+    planoxperfis
+
+[33mcommit bdbf4e1a73ac8ecd48b68c91624c6e62ca5cc3f6[m[33m ([m[1;31mlarafood_R/perfisxpermissoes[m[33m, [m[1;32mperfisxpermissoes[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Sun Oct 4 18:24:23 2020 -0300
+
+    perfisxpermissoes
+
+[33mcommit 744e571b1ad61f476d76166320493171405c96cf[m[33m ([m[1;31mlarafood_R/permissoes[m[33m, [m[1;32mpermissoes[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Wed Sep 30 23:47:09 2020 -0300
+
+    permissoes
+
+[33mcommit 4d300ffe68d05d3c911b98c4dd2a81d15f059aca[m[33m ([m[1;31mlarafood_R/perfis[m[33m, [m[1;32mperfis[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Wed Sep 30 23:02:34 2020 -0300
+
+    perfis
+
+[33mcommit 9bdf040584de623883473b9826bfbadfd9efbb63[m[33m ([m[1;31mlarafood_R/detalhes-do-plano[m[33m, [m[1;32mdetalhes-do-plano[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Wed Sep 30 10:45:03 2020 -0300
+
+    detalhes-do-plano
+
+[33mcommit eee0870f61a4afd32cb3ff11c15069623b2825af[m[33m ([m[1;31mlarafood_R/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: james <james@thinkseg.com>
+Date:   Tue Sep 29 16:16:41 2020 -0300
+
+    gestao de planos
+
+[33mcommit 1c4424d06aab0379defef024b0aeea164589727b[m
+Author: james <james@thinkseg.com>
+Date:   Sat Sep 26 10:58:17 2020 -0300
+
+    Primeiro Commit
