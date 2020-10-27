@@ -13,6 +13,7 @@ use App\Observers\CategoryObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -22,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 
     /**

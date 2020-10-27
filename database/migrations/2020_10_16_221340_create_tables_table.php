@@ -16,7 +16,7 @@ class CreateTablesTable extends Migration
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tenant_id');
-            $table->string('identity')->unique();
+            $table->string('identity')->unique(); 
             $table->text('description');
             $table->timestamps();
 
