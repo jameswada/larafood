@@ -18,17 +18,22 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\TenantController;
 use App\Http\Controllers\Site\SiteController;
-
+use App\Models\Client;
 
 // use App\Models\User;
 
 Route::prefix('admin')->middleware('auth')->group(function(){
 
 //debug 
-Route::get('teste', function(){ dd(auth()->user()->permissions()); });
+Route::get('teste', function(){ 
+    //dd(Client::first());
+    $client=Client::first();
+    $token = $client->createToken('token-teste');
+    dd($token->plainTextToken);
+ });
 //debug 
-// Route::get('teste', function(){ dd(auth()->user()->hasPermission('Planos')); });
-
+ //Route::get('teste', function(){ dd(auth()->user()); });
+//
 
 // roles x users
 Route::get('users/{id}/role/{idRole}/detach', [RoleUserController::class, 'detachRolesUser'])->name('users.role.detach');
